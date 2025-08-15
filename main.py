@@ -2,13 +2,15 @@ import pygame
 from constants import *
 
 def main():
-    print("Starting Asteroids!")
-    print(f"Screen width: {SCREEN_WIDTH}")
-    print(f"Screen height: {SCREEN_HEIGHT}")
-    print(f"ASTEROID_MIN_RADIUS: {ASTEROID_MIN_RADIUS}")
-    print(f"ASTEROID_KINDS: {ASTEROID_KINDS}")
-    print(f"ASTEROID_SPAWN_RATE: {ASTEROID_SPAWN_RATE}")
-    print(f"ASTEROID_MAX_RADIUS: {ASTEROID_MAX_RADIUS}")
+    pygame.init()
+    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+
+    while True:   
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                return
+        screen.fill((0,0,0), None, 0)
+        pygame.display.flip()
 
 
 if __name__ == "__main__":
